@@ -1,2 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1 class="headerHome"> Homepage </h1>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner text-center">
+    <div class="carousel-item active">
+    <%= image_tag "picture_1.jpg", class: "pictureSlide"%>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "picture_2.jpg", class: "pictureSlide" %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "picture_3.jpg", class:"pictureSlide"%>
+    </div>
+  </div>
+</div>
