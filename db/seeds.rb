@@ -5,9 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
 puts "Cleaning database..."
 Venue.destroy_all
 User.destroy_all
+
+url = ["https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637071218/venues/photo-1636138390540-de85ed519d40_tydinf.jpg",
+       "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637071192/venues/photo-1636392000614-d954d2fd833b_axdijg.jpg",
+       "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637071167/venues/photo-1636728797208-4ccf0ffe119c_uktmbi.jpg"]
+
 
 puts "Creating users"
 
@@ -53,5 +60,10 @@ Venue.create!(
   price: 110,
   user: [u1, u2].sample
 )
+
+Venue.all.each do |venue|
+  photo = URI.open(url.sample)
+  venue.photos.attach(io: photo, filename: 'venue.png', content_type: 'image/png')
+end
 
 puts "Finished!"

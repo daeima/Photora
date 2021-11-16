@@ -3,7 +3,7 @@ class VenuesController < ApplicationController
   end
 
   def new
-    Venue.new
+    @venue = Venue.new
   end
 
   def create
