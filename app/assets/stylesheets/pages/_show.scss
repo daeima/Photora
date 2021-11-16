@@ -1,0 +1,40 @@
+.showHeader {
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+
+.pictureShow {
+  width: 50vw;
+  height: 375px;
+  padding: 15px;
+  border-radius: 25px;
+  object-fit: cover;
+}
+.showLocation {
+  padding-left: 30px;
+}
+
+.carousel-size {
+  height: 50vh !important;
+  width: 50vw !important;
+  min-width: 50vw !important;
+  min-height: 50vh !important;
+  margin: 20px;
+}
+
+.placeholder {
+  background-color: white;
+  border: 1px solid black;
+  margin: 30px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+// .includingAll {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   margin-bottom: 10px;
+//   grid-gap: 1rem;
+// }
