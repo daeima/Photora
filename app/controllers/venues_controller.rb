@@ -1,9 +1,10 @@
 class VenuesController < ApplicationController
   def index
+    @venues = Venue.all
   end
 
   def new
-    Venue.new
+    @venue = Venue.new
   end
 
   def create
@@ -22,6 +23,6 @@ class VenuesController < ApplicationController
   private
 
   def venue_params
-    params.require(:venue).permit(:name, :location, :description, :price, :user)
+    params.require(:venue).permit(:name, :location, :description, :price, :user, photos: [])
   end
 end
