@@ -6,6 +6,13 @@
   margin-top: 25px;
 }
 
+.carousel {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
 .pictureSlide {
   height: 500px;
   border-radius: 10px;
@@ -61,6 +68,6 @@ background-image: asset-url('picture_5');
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 70px;
   font-family: $headers-font;
 }
