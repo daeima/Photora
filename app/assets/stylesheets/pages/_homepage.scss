@@ -10,3 +10,49 @@
   height: 500px;
   border-radius: 10px;
 }
+
+.subtitleHome {
+  font-family: $body-font;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display-4 {
+  font-family: $headers-font;
+  text-shadow: 2px 2px #111111;
+}
+
+.lead {
+  Text-shadow: 1px 1px #111111;
+}
+
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.backgroundImage1 {
+background-image: asset-url('picture_1');
+}
+
+.backgroundImage2 {
+background-image: asset-url('picture_2');
+}
+
+.backgroundImage3 {
+background-image: asset-url('picture_3');
+}
+
+.backgroundImage4 {
+background-image: asset-url('picture_4');
+}
+
+.backgroundImage5 {
+background-image: asset-url('picture_5');
+}
