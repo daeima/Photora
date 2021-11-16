@@ -35,7 +35,7 @@ Venue.create!(
   location: '10 Clifton Gardens London W9 1DT',
   description: 'A lovely summer feel for this spacious garden Venue. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory',
   price: 75,
-  user: [u1,u2].sample
+  user: [u1, u2].sample
 )
 
 Venue.create!(
@@ -43,7 +43,7 @@ Venue.create!(
   location: '5 Queensmill Road London SW6 6JP',
   description: 'Lovely warm comfortable and stylishly furnished house. Private bedroom and bathroom with shared living areas.',
   price: 65,
-  user: [u1,u2].sample
+  user: [u1, u2].sample
 )
 
 Venue.create!(
@@ -51,14 +51,7 @@ Venue.create!(
   location: 'Euston Rd London N1C 4QP',
   description: 'A mini apartment within the clock tower apartment at St Pancras Station, with its own en suite bathroom and kitchen and sitting area.',
   price: 110,
-  user: [u1,u2].sample
+  user: [u1, u2].sample
 )
 
 puts "Finished!"
-
-
-# t.string "email", default: "", null: false
-#     t.string "encrypted_password", default: "", null: false
-#     t.string "first_name", null: false
-#     t.string "last_name", null: false
-#     t.boolean "owner", default: false
