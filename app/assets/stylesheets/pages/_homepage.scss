@@ -56,3 +56,11 @@ background-image: asset-url('picture_4');
 .backgroundImage5 {
 background-image: asset-url('picture_5');
 }
+
+.subheaderHome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  font-family: $headers-font;
+}
