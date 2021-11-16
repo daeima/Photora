@@ -1,0 +1,8 @@
+<h1>New Venue</h1>
+
+<%= simple_form_for(@Venue) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
