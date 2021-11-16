@@ -1,5 +1,8 @@
 <h1 class="showHeader"> <%= @venue.name %></h1>
-<p class="showLocation"> 📍 Location: <%= @venue.location %></p>
+<div class="containerLocation">
+  <p class="showLocation"> 📍 Location: <%= @venue.location %></p>
+  <p class="card-price"> Price: <%= @venue.price %>€</p>
+</div>
 <div class="includingAll">
   <div class="containingAll d-flex align-items-center">
     <div>
@@ -22,10 +25,9 @@
             </div>
           </div>
         </div>
-        <li>
+        <li class="listDescription">
         <p>Description: <%= @venue.description %></p>
         <p class="placeholder">Placeholder for a Calendar</p>
       </li>
     </div>
   </div>
-<p>Price: <%= @venue.price %>€</p>
