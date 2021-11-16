@@ -13,8 +13,13 @@ User.destroy_all
 
 url = ["https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637071218/venues/photo-1636138390540-de85ed519d40_tydinf.jpg",
        "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637071192/venues/photo-1636392000614-d954d2fd833b_axdijg.jpg",
-       "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637071167/venues/photo-1636728797208-4ccf0ffe119c_uktmbi.jpg"]
-
+       "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637071167/venues/photo-1636728797208-4ccf0ffe119c_uktmbi.jpg",
+       "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637071134/venues/photo-1636928837218-f2b56d5a7861_zwkcwa.jpg",
+       "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637071112/venues/photo-1636714749996-fef3a3169478_ldt0tm.jpg",
+       "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637070998/venues/photo-1622763853951-ded5a33cb724_iml3wi.jpg",
+       "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637070843/venues/photo-1416331108676-a22ccb276e35_af8rvy.jpg",
+       "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637070795/venues/photo-1600585154363-67eb9e2e2099_ffchbc.jpg",
+       "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637070759/venues/photo-1512917774080-9991f1c4c750_oop0zg.jpg"]
 
 puts "Creating users"
 
