@@ -8,8 +8,8 @@
 
 .carousel {
   width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
+  height: 88.5vh;
+  min-height: 88.5vh;
   min-width: 100vw;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .carousel-item {
-  height: 100vh;
+  height: 88.5vh;
   min-height: 350px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
@@ -70,4 +70,8 @@ background-image: asset-url('picture_5');
   justify-content: center;
   margin-top: 70px;
   font-family: $headers-font;
+}
+
+.containerShow {
+  height: 50vh;
 }

@@ -1,33 +1,35 @@
-<h1 class="showHeader"> <%= @venue.name %></h1>
-<div class="containerLocation">
-  <p class="showLocation"> 📍 Location: <%= @venue.location %></p>
-  <p class="card-price"> Price: <%= @venue.price %>€</p>
-</div>
-<div class="includingAll">
-  <div class="containingAll d-flex align-items-center">
-    <div>
-      <div id="carouselExampleIndicators" class="carousel slide carousel-size" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <%= image_tag "picture_1.jpg", class:"pictureShow" %>
-          </div>
-            <div class="carousel-item">
-              <%= image_tag "picture_2.jpg", class:"pictureShow" %>
+<div class="containerShow">
+  <h1 class="showHeader"> <%= @venue.name %></h1>
+  <div class="containerLocation">
+    <p class="showLocation"> 📍 Location: <%= @venue.location %></p>
+    <p class="card-price"> Price: <%= @venue.price %>€</p>
+  </div>
+  <div class="includingAll">
+    <div class="containingAll d-flex align-items-center">
+      <div>
+        <div id="carouselExampleIndicators" class="carousel slide carousel-size" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= image_tag "picture_1.jpg", class:"pictureShow" %>
             </div>
               <div class="carousel-item">
-                <%= image_tag "picture_3.jpg", class:"pictureShow" %>
+                <%= image_tag "picture_2.jpg", class:"pictureShow" %>
+              </div>
+                <div class="carousel-item">
+                  <%= image_tag "picture_3.jpg", class:"pictureShow" %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <li class="listDescription">
-        <p>Description: <%= @venue.description %></p>
-        <p class="placeholder">Placeholder for a Calendar</p>
-      </li>
+          <li class="listDescription">
+          <p>Description: <%= @venue.description %></p>
+          <p class="placeholder">Placeholder for a Calendar</p>
+        </li>
+      </div>
     </div>
-  </div>
+</div>

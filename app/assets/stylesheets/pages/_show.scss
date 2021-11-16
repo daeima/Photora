@@ -1,18 +1,18 @@
+.containerShow {
+  height: 100vh;
+}
 .showHeader {
-  padding-top: 30px;
-  padding-left: 30px;
-  padding-bottom: 10px;
+  margin: 30px;
 }
 
+.showLocation {
+  margin-left: 30px;
+}
 .pictureShow {
   width: 50vw;
   height: 420px;
-  padding: 15px;
   border-radius: 25px;
   object-fit: cover;
-}
-.showLocation {
-  padding-left: 30px;
 }
 
 .carousel-size {
