@@ -1,0 +1,36 @@
+.cardPicture {
+  height: 150px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.cardLocation {
+  color: grey;
+  font-size: medium;
+}
+
+.cardButton {
+  border-radius: 10px;
+}
+
+.card-text {
+  font-family: $body-font;
+}
+
+.row {
+  display: flex;
+
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+.card {
+  margin: 25px;
+}
