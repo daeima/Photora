@@ -5,5 +5,5 @@ class Venue < ApplicationRecord
 
   validates :name, :location, :description, :price, presence: true
   validates :name, length: { minimum: 4 }, uniqueness: true
-  validates :description, length: { in: 50..200 }
+  validates :description, length: { in: 20..200 }
 end
