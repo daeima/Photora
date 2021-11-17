@@ -1,0 +1,18 @@
+<div class="containerBooking">
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+    <h1>Booking Details for <div class="titleBooking"><%= @venue.name %></div></h1>
+    <p>Price will be charged per hour, the current price per hour is <span class="currentPrice"><%= @venue.price %>€</span>.</p>
+    <p class="lineBeforeForm"> This location is <span class="availabilityText">available</span> for the requested time!</p>
+    </div>
+
+  <div class="containerCalendar">
+    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+      <h2>Choose Timeslot</h2>
+      <%= simple_form_for [@venue, @booking] do |f| %>
+        <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.submit "Request Booking", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

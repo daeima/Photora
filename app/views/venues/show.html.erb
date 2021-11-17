@@ -29,6 +29,7 @@
           <li class="listDescription">
           <p>Description: <%= @venue.description %></p>
           <p class="placeholder">Placeholder for a Calendar</p>
+          <%= link_to "Create a Booking", new_venue_booking_path(@venue), class:"btn btn-primary rounded-5" %>
         </li>
       </div>
     </div>
