@@ -1,14 +1,22 @@
     <div class="container">
+<<<<<<< HEAD
       <div class="card-group">
+=======
+      <div class="row">
+>>>>>>> master
        <% @venues.each do |venue| %>
-         <div class="card col-4" >
+         <div class="card col-3" >
            <%= link_to venue_path(venue), class:'text-decoration-none' do %>
+<<<<<<< HEAD
 
              <%= image_tag venue.photos.first, class:"card-img-top"%>
+=======
+             <%= image_tag venue.photos.first, class:"card-img-top card-venue-img"%>
+>>>>>>> master
              <div class="card-body">
              <h5 class="card-title"><%= venue.name %></h5>
              <h5 class="cardLocation"><%= venue.location %></h5>
-             <p class="card-text"><%= venue.description %></p>
+             <p class="card-text"><%= venue.description %></p><br>
              <%= link_to "show",venue_path(venue), class: "btn btn-danger"%>
         </div>
       <% end %>
