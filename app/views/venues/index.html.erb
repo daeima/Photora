@@ -1,17 +1,20 @@
-    <div class="card-group">
-    <% @venues.each do |venue| %>
-      <div class="card col-4" >
-         <%= link_to venue_path(venue), class:'text-decoration-none' do %>
-             <%= image_tag "picture_2.jpg", class:"card-img-top"%>
+    <div class="container">
+      <%= link_to "New Venue", new_venue_path, class: "btn btn-primary" %>
+      <div class="card-group">
+       <% @venues.each do |venue| %>
+         <div class="card col-4" >
+           <%= link_to venue_path(venue), class:'text-decoration-none' do %>
+           
+             <%= image_tag venue.photos.first, class:"card-img-top"%>
              <div class="card-body">
              <h5 class="card-title"><%= venue.name %></h5>
              <h5 class="cardLocation"><%= venue.location %></h5>
              <p class="card-text"><%= venue.description %></p>
-             <a href="#" class="btn btn-danger cardButton">Explore</a>
+             <%= link_to "show",venue_path(venue), class: "btn btn-danger"%>
         </div>
       <% end %>
       </div>
   <% end %>
 </div>
 </div>
-
+</div>
