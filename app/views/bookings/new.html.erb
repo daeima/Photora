@@ -1,0 +1,11 @@
+<div class="containerBooking">
+  <h1>Booking Details for <div class="titleBooking"><%= @venue.name %></div></h1>
+  <p>Price will be charged per hour, the current price per hour is <span class="currentPrice"><%= @venue.price %>€</span>.</p>
+  <p class="lineBeforeForm"> This location is <span class="availabilityText">available</span> for the requested time!</p>
+
+  <%= simple_form_for [ @venue, @booking ] do |f| %>
+    <%= f.input :start_time %>
+    <%= f.input :end_time %>
+    <%= f.submit "Request Booking", class: "btn btn-primary" %>
+  <% end %>
+</div>
