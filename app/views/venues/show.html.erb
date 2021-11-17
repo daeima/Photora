@@ -2,7 +2,7 @@
   <h1 class="showHeader"> <%= @venue.name %></h1>
   <div class="containerLocation">
     <p class="showLocation"> 📍 Location: <%= @venue.location %></p>
-    <p class="card-price"> Price: <%= @venue.price %>€</p>
+    <p class="card-price"> Price / hour: <%= @venue.price %>€</p>
   </div>
   <div class="includingAll">
     <div class="containingAll d-flex align-items-center">
@@ -15,13 +15,13 @@
               </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= image_tag "picture_1.jpg", class:"pictureShow" %>
+              <%= image_tag @venue.photos.first, class:"pictureShow" %>
             </div>
               <div class="carousel-item">
-                <%= image_tag "picture_2.jpg", class:"pictureShow" %>
+                <%= image_tag @venue.photos.second, class:"pictureShow" %>
               </div>
                 <div class="carousel-item">
-                  <%= image_tag "picture_3.jpg", class:"pictureShow" %>
+                  <%= image_tag @venue.photos.last, class:"pictureShow" %>
                 </div>
               </div>
             </div>
