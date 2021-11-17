@@ -1,0 +1,9 @@
+<div class="d-flex align-items-center" id="avatar">
+  <% if user_signed_in? %>
+    <% user = current_user %>
+    <p>
+      <%= user.first_name[0].capitalize %>
+      <%= user.last_name[0].capitalize %>
+    </p>
+  <% end %>
+</div>

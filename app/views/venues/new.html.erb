@@ -1,8 +1,11 @@
-<h1>New Venue</h1>
-
-<%= simple_form_for(@venue) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :location %>
-  <%= f.input :description %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true }%>
-<% end %>
+<div class="container">
+  <h1>New Venue</h1>
+  <%= simple_form_for(@venue) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :location %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }%>
+    <%= f.submit %>
+  <% end %>
+</div>
