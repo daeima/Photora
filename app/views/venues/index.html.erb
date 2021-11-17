@@ -1,15 +1,13 @@
     <div class="container">
-      <%= link_to "New Venue", new_venue_path, class: "btn btn-primary" %>
-      <div class="card-group">
+      <div class="row">
        <% @venues.each do |venue| %>
-         <div class="card col-4" >
+         <div class="card col-3" >
            <%= link_to venue_path(venue), class:'text-decoration-none' do %>
-           
-             <%= image_tag venue.photos.first, class:"card-img-top"%>
+             <%= image_tag venue.photos.first, class:"card-img-top card-venue-img"%>
              <div class="card-body">
              <h5 class="card-title"><%= venue.name %></h5>
              <h5 class="cardLocation"><%= venue.location %></h5>
-             <p class="card-text"><%= venue.description %></p>
+             <p class="card-text"><%= venue.description %></p><br>
              <%= link_to "show",venue_path(venue), class: "btn btn-danger"%>
         </div>
       <% end %>
