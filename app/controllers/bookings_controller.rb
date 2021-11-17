@@ -9,8 +9,18 @@ class BookingsController < ApplicationController
     # we need `restaurant_id` to associate review with corresponding restaurant
     @venue = Venue.find(params[:venue_id])
     @booking.venue = @venue
-    @booking.save
-    redirect_to venues_path
+    @booking.user = current_user
+    if @booking.save!
+    redirect_to confirmation_path(@booking)
+    else
+      render :new
+    end
+  end
+
+  def confirmation
+    @booking = Booking.find(params[:id])
+    @venue = @booking.venue
+    @booking.total_price = (@booking.end_time - @booking.start_time) * (@venue.price)
   end
 
   private

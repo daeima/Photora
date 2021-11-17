@@ -1,0 +1,13 @@
+<div class="containerConfirmation">
+<li>
+    <h1 class="headConfirmation">Your Reservation is confirmed!</h1>
+    <h2>See Reservation Details:</h2>
+    <p>Name of the Venue: <%= @venue.name %></p>
+    <p>Location: <%= @venue.location %></p>
+    <p>Total Price: <%= @booking.total_price %>€</p>
+
+    <p>Thank You for booking with Photostra! Enjoy your Photoshoot</p>
+
+    <%= link_to "See other venues", venues_path %>
+    </li>
+</div>
