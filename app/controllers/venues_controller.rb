@@ -1,4 +1,6 @@
 class VenuesController < ApplicationController
+  # skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
     @venues = Venue.all
   end
@@ -9,7 +11,8 @@ class VenuesController < ApplicationController
 
   def create
     @venue = Venue.new(venue_params)
-    if @venue.save
+    @venue.user = current_user
+    if @venue.save!
       redirect_to venue_path(@venue)
     else
       render :new
