@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
   def confirmation
     @booking = Booking.find(params[:id])
     @venue = @booking.venue
-    @booking.total_price = (@booking.end_time - @booking.start_time) * (@venue.price)
+    @booking.total_price = (@booking.end_time.hour - @booking.start_time.hour) * (@venue.price)
   end
 
   private
