@@ -1,0 +1,17 @@
+.mapboxgl-popup {
+  max-width: 100px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: $body-font;
+  color: #157FFB;
+}
+
+.popupLocation {
+  color: grey;
+}
+
+.popupName {
+  font-size: medium;
+}
