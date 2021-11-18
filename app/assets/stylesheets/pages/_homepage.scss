@@ -1,3 +1,11 @@
+#page-container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-bottom: 142px;    /* Footer height */
+}
+
+
 .headerHome {
   display: flex;
   justify-content: center;
@@ -6,12 +14,12 @@
   margin-top: 25px;
 }
 
-.carousel {
-  width: 100vw;
-  height: 90vh;
-  min-height: 90vh;
-  min-width: 100vw;
-}
+// .carousel {
+//   width: 100vw;
+//   height: 90vh;
+//   min-height: 90vh;
+//   min-width: 100vw;
+// }
 
 .pictureSlide {
   height: 500px;
