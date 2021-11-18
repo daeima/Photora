@@ -1,22 +1,33 @@
-<%= @user.first_name%>
-<%= @user %>
+
 <h1 class="text-center mb-3"> My bookings</h1>
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">#</th>
+      <th scope="col"></th>
       <th scope="col">Start-time</th>
       <th scope="col">End-Time</th>
+      <th scope="col">Venue Name</th>
+      <th scope="col">Venue location</th>
       <th scope="col">Total-price</th>
     </tr>
   </thead>
+
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+      <% @user.bookings.each do |booking| %>
+        <tr>
+            <th scope="row"><%= booking.id %></th>
+              <td><%= booking.start_time %></td>
+              <td><%= booking.end_time.hour %></td>
+              <td><%= booking.venue.name%></td>
+              <td><%= booking.venue.location%></td>
+              <td><%= (booking.end_time.hour - booking.start_time.hour) * (booking.venue.price) %></td>
+              <td><%= link_to "delete", class:"btn btn-primary" %></td>
+              
+
+
+       </tr>
+      <% end %>
+      
   </tbody>
 </table>
 
