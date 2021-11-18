@@ -2,8 +2,34 @@ body {
 overflow-x: hidden;
 }
 
-#map {
-  height: 100vh;
+.mapIndex {
   position: sticky;
   top: 0;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+.card {
+  margin-left: 20px;
+}
+
+.containerIndex {
+  margin-right: 10px;
+  width: 97vw;
+  padding: 10px;
+}
+
+.pictureIndex {
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.grid-map {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
