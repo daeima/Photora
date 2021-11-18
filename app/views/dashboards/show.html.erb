@@ -1,8 +1,8 @@
 
 <h1 class="text-center mb-3">Welcome <%= @user.first_name %></h1>
-<% if @user.owner %>
-<div class="text-center"><%= link_to "Become owner", new_venue_path, class: "btn btn-secondary mt-5 invisible"%></div>
-<% end %>
+
+<div class="text-center"><%= link_to "Become owner", new_venue_path, class: "btn btn-secondary mt-5 "%></div>
+
 <section style="background-color: #eee;">
   <div class="container py-5">
     <div class="row">
