@@ -1,32 +1,9 @@
 
-<div class="container"></div>
 <h1 class="text-center mb-3">Welcome <%= @user.first_name %></h1>
-<div class="container">
+<div><%= link_to "Become owner", new_venue_path, class: "btn btn-secondary text-right"%></div>
 
-   <ul class="profile-header-tab nav nav-tabs nav-tabs-v2">
-     <li class="nav-item">
-     <a><%= link_to "Bookings", dashboard_path, class: "nav-link active btn btn-primary mr-2"%></a>
-     </li>
-      <li class="nav-item">
-     <a><%= link_to "Owner", new_venue_path, class: " nav-link active btn btn-primary mb-2 owner"%>
-</a>
-     </li>
-  </ul>
-   
-</div>
-
-
-
-
- 
 <section style="background-color: #eee;">
   <div class="container py-5">
-    <div class="row">
-      <div class="col">
-        
-      </div>
-    </div>
-
     <div class="row">
       <div class="col-lg-4">
         <div class="card mb-4">
@@ -41,7 +18,7 @@
             
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                 <i class="fab fa-github fa-lg" style="color: #333333;"></i>
-                <p class="mb-0">https://github.com</p>
+                <p class="mb-0"></p>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                 <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
@@ -87,38 +64,70 @@
             </div>
           </div>
         </div>
-              <div class="container"><nav>
-                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
-                      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
-                   </div>
-                </nav>
-               <div class="tab-content" id="nav-tabContent">
-                  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"></div>
-                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-              </div></div>
-               
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card mb-4 mb-md-0">
-              <div class="card-body">
-                <% @user.bookings.each do |booking| %>
-                <%= link_to venue_path(booking.venue), class:'text-decoration-none' do %>
-              <div class="card-product">
-                 <%= image_tag booking.venue.photos.first%>
-                 <div class="card-product-infos">
-                    <h2><%= booking.venue.name %></h2>
-                   <p><%= booking.start_time %></p>
+         
+           <ul class="nav nav-tabs" id="myTab" role="tablist">
+             <li class="nav-item">
+                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Bookings</a>
+                  </li>
+                 <% if @user.owner %>
+                 <li class="nav-item">
+                   <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Venues</a>
+                 </li>
+                 <% end %>
+            </ul>
+               <div class="tab-content" id="myTabContent">
+                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                 
+                          
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="card mb-4 mb-md-0">
+                          <div class="card-body">
+                            <% @user.bookings.each do |booking| %>
+                            <%= link_to venue_path(booking.venue), class:'text-decoration-none' do %>
+                              <div class="card-product">
+                                  <%= image_tag booking.venue.photos.first%>
+                                    <div class="card-product-infos">
+                                      <h2><%= booking.venue.name %></h2>
+                                      <p><%= booking.start_time %></p>
+                                    </div>
+                              </div>
+                            <% end %>
+                           <% end %>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+
+
                 </div>
-              </div>
-           <% end %>
-        <% end %>
-              </div>
-            </div>
-          </div>
-          <nav>
-      </div>
-    </div>
+                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                 
+                  <% if @user.owner %>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="card mb-4 mb-md-0">
+                          <div class="card-body">
+                            <% @user.venues.each do |venue| %>
+                            <%= link_to venue_path(venue), class:'text-decoration-none' do %>
+                              <div class="card-product">
+                                  <%= image_tag venue.photos.first%>
+                                    <div class="card-product-infos">
+                                      <h2><%= venue.name%></h2>
+                                      <p><%= venue.description %></p>
+                                    </div>
+                               </div>
+                            <% end %>
+                           <% end %>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              <% end %>
+                 </div>
+                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+               </div>
+        
   </div>
 </section>
 

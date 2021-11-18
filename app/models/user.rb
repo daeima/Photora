@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   validates :first_name, :last_name, length: { minimum: 2 }
+  
 end
