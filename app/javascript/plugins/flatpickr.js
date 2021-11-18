@@ -6,6 +6,4 @@ const initFlatpickr = () => {
     enableTime: true
   });
 }
-
-
 export { initFlatpickr };
