@@ -1,5 +1,5 @@
 class Venue < ApplicationRecord
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   belongs_to :user
   has_many_attached :photos
 
