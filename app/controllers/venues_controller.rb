@@ -29,6 +29,7 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find(params[:id])
+    @review = Review.new(id: @venue)
 
     @markers = [{
         lat: @venue.latitude,

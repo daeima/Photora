@@ -2,7 +2,7 @@
  <div class="cards-container ">
     <% @venues.each do |venue| %>
     <div class=" card-venue" >
-      <%= image_tag venue.photos.first, class:"card-img-top card-venue-img pictureIndex"%>
+      <%= image_tag venue.photos.sample, class:"card-img-top card-venue-img pictureIndex"%>
       <div class="card-body">
         <h5 class="card-title"><%= venue.name %></h5>
         <h5 class="cardLocation"><%= venue.location %></h5>
