@@ -8,8 +8,11 @@
 require "open-uri"
 
 puts "Cleaning database..."
+Review.destroy_all
+Booking.destroy_all
 Venue.destroy_all
 User.destroy_all
+
 
 url = [
   "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637071218/venues/photo-1636138390540-de85ed519d40_tydinf.jpg",
@@ -110,6 +113,28 @@ locations = [
   "130 Kingsland High Street, Hackney, London, E8 2LQ"
 ]
 
+good_reviews = [
+  "Great location and fun atmosphere!",
+  "Good spot!",
+  "Excelent natural light",
+  "Perfect for night shoots",
+  "Gorgeaus landscape",
+  "100% recomand!Will book again for sure!",
+  "Perfect for romantic photoshoots",
+  "Great place for good price",
+  "Cannot say enough good things about this venue",
+  "Simply gorgeaus",
+  "The place was just as the description"
+]
+
+bad_reviews = [
+  "A bit to tiny",
+  "Not engnough natural light",
+  "To expensive",
+  "Unclean",
+  "The view was not as advertised",
+]
+
 Venue.create!(
   name: 'Light & Spacious Garden Venue London',
   location: '10 Clifton Gardens London W9 1DT',
@@ -134,7 +159,7 @@ Venue.create!(
   user: [u1, u2].sample
 )
 
-12.times do
+9.times do
   Venue.create!(
     name: names.sample,
     location: locations.sample,
@@ -144,8 +169,46 @@ Venue.create!(
   )
 end
 
+puts "Finished creating venues"
+
+puts "Creating bookings"
+
+20.times do
+  Booking.create!(
+    start_time: "2020-06-14 18:00:00",
+    end_time: "2020-06-14 18:00:00",
+    total_price: rand(50..200),
+    user: [u1, u2].sample,
+    venue: Venue.all.sample
+  )
+end
+
+puts "Bookings done"
+
+puts "Creating reviews"
+
+20.times do
+  Review.create!(
+    content: good_reviews.sample,
+    rating: rand(3..5),
+    booking: Booking.all.sample
+  )
+end
+
+10.times do
+  Review.create!(
+    content: bad_reviews.sample,
+    rating: rand(3..5),
+    booking: Booking.all.sample
+  )
+end
+
+puts "Finished creating reviews"
+
+puts "Adding photos"
+
 Venue.all.each do |venue|
-  photo = URI.open(url.sample)
+  photo = URI.open(url.pop)
   venue.photos.attach(io: photo, filename: 'venue.png', content_type: 'image/png')
 end
 
@@ -159,4 +222,4 @@ Venue.all.each do |venue|
   venue.photos.attach(io: photo, filename: 'venue.png', content_type: 'image/png')
 end
 
-puts "Finished!"
+puts "Finished adding photos. Database complete"
