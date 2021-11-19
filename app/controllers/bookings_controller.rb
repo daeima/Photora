@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.venue = @venue
     @booking.user = current_user
     if @booking.save!
-    redirect_to confirmation_path(@booking)
+      redirect_to confirmation_path(@booking)
     else
       render :new
     end
@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
   def confirmation
     @booking = Booking.find(params[:id])
     @venue = @booking.venue
-    @booking.total_price = (@booking.end_time.hour - @booking.start_time.hour) * (@venue.price)
+    @booking.total_price = (@booking.end_time.hour - @booking.start_time.hour) * @venue.price
   end
 
   private
