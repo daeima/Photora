@@ -1,6 +1,6 @@
-.containerShow {
-  height: 100vh;
-}
+// .containerShow {
+//   height: 100vh;
+// }
 .showHeader {
   margin: 30px;
 }
@@ -101,4 +101,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.showDescription {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+  font-style: italic;
+}
+
+.mapIndex {
+  display: flex;
+  justify-content: right;
+  width: 50vw;
+  max-width: 50vw;
+  padding: 15px;
+  border-radius: 25px;
+}
+
+.placeholderReview {
+  width: 50vw;
+  background-color: white;
+  height: 500px;
+}
+
+.containerShowDescription {
+  display: flex;
+  justify-content: space-between;
 }
