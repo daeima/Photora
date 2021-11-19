@@ -4,7 +4,7 @@
     <% @venues.each do |venue| %>
     <div class="card-venue" >
       <%= link_to venue_path(venue), class:"text-decoration-none" do %>
-      <%= image_tag venue.photos.sample, class:"card-img-top card-venue-img pictureIndex"%>
+      <%= image_tag venue.photos.first, class:"card-img-top card-venue-img pictureIndex"%>
       <div class="card-body">
         <h5 class="card-title title"><%= venue.name %></h5>
         <h5 class="cardLocation"><%= venue.location %></h5>
