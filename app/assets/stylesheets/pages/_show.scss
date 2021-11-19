@@ -6,10 +6,11 @@
   margin-left: 30px;
   color: grey;
 }
+
 .pictureShow {
-  width: 50vw;
-  height: 420px;
-  border-radius: 25px;
+  // width: 50vh;
+  height: 400px;
+  border-radius: 15px;
   object-fit: cover;
 }
 
@@ -114,3 +115,24 @@
   display: flex;
   justify-content: space-between;
 }
+
+.top_show {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 25px;
+  margin-left: 40px ;
+  margin-right: 40px;
+  height: 70vh;
+}
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+
+}
+
+// .containerMapAndReview {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }

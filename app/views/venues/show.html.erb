@@ -1,78 +1,98 @@
-<div class="containerShow">
-  <h1 class="showHeader"> <%= @venue.name %></h1>
-  <div class="containerLocation">
-    <p class="showLocation"> 📍 Location: <%= @venue.location %></p>
-    <p class="card-price"> Price / hour: <%= @venue.price %>€</p>
-  </div>
-  <div class="includingAll">
-    <div class="containingAll d-flex align-items-center">
+<h1 class="showHeader"> <%= @venue.name %></h1>
+    <div class="containerLocation">
+      <p class="showLocation"> 📍 Location: <%= @venue.location %></p>
+      <p class="card-price"> Price / hour: <%= @venue.price %>€</p>
+    </div>
+
+    <div class="top_show">
+      <!-- Carousel -->
       <div>
         <div id="carouselExampleIndicators" class="carousel slide carousel-size" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              </ol>
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= image_tag @venue.photos.first, class:"pictureShow" %>
+              <%= image_tag @venue.photos.first, class:"d-block w-100 pictureShow" %>
             </div>
-              <div class="carousel-item">
-                <%= image_tag @venue.photos.second, class:"pictureShow" %>
-              </div>
-                <div class="carousel-item">
-                  <%= image_tag @venue.photos.last, class:"pictureShow" %>
-                </div>
-              </div>
+            <div class="carousel-item">
+              <%= image_tag @venue.photos.second, class:"d-block w-100 pictureShow" %>
+            </div>
+            <div class="carousel-item">
+              <%= image_tag @venue.photos.last, class:"d-block w-100 pictureShow" %>
             </div>
           </div>
-          <li class="listDescription">
-          <p class="placeholder">Placeholder for a Calendar</p>
-          <%= link_to "Create a Booking", new_venue_booking_path(@venue), class:"btn btn-primary rounded-5" %>
-        </li>
-      </div>
-    </div>
-    <p class="showDescription"><%= @venue.description %></p>
-</div>
-  <div class="containerShowDescription">
-
-    <!-- Reviews -->
-
-      <div class="row">
-        <div class="col-12 col-sm-6">
-          <h3>Reviews</h3>
-          <% if @venue.reviews.empty? %>
-            <small><em class="text-muted">Be the first one to review this venue</em></small>
-          <% end %>
-          <% @venue.reviews.each do |review| %>
-            <div>
-              <% review.rating.times do %>
-                <i class="fas fa-star star-yellow"></i>
-              <% end %>
-              <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
-              <p class="mb-0"><%= review.content %></p>
-            </div>
-            <hr>
-          <% end %>
         </div>
-        <div class="col-12 col-sm-6">
-          <div class="bg-white rounded p-3">
-            <h5>Add your review</h5>
-            <%= simple_form_for [@venue, @review] do |f| %>
-              <%= f.input :content, placeholder: 'Add your review here...' %>
-              <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
-              <%= f.submit class:'btn btn-flat' %>
+        <br>
+        <p class="showDescription"><%= @venue.description %></p>
+        <br>
+        <%= link_to "Book now!", new_venue_booking_path(@venue), class:"btn btn-dark btn-block rounded" %>
+      </div>
+      <!-- Carousel -->
+
+
+      <!-- Reviews -->
+      <div>
+
+        <div class="wrapper">
+          <div class="reviews">
+            <h3>Reviews</h3>
+            <% if @venue.reviews.empty? %>
+              <small><em class="text-muted">Be the first one to review this venue</em></small>
+            <% else %>
+              <% @venue.reviews.first(5).each do |review| %>
+                <div>
+                  <% review.rating.times do %>
+                    <i class="fas fa-star star-yellow"></i>
+                  <% end %>
+                  <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+                  <p class="mb-0"><%= review.content %></p>
+                </div>
+                <hr>
+              <% end %>
             <% end %>
           </div>
+
+        </div>
+      </div>
+
+      <!-- Reviews -->
+    </div>
+
+
+
+<div class="parent-container d-flex align-items-center">
+
+    <!-- Map -->
+    <div class="container">
+      <div class="row">
+        <div class="mapIndexShow col ">
+          <div id="map2"
+              style="width: 50vw; height: 350px"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
         </div>
 
-    <!-- Reviews -->
-
-    <div class=mapIndexShow>
-      <div id="map"
-          style="width: 50vw; height: 350px"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-  </div>
+
+    <!-- Map -->
+
+    <div class="container">
+      <div class="row">
+        <div class="rev_form col bg-white rounded p-3">
+          <h3>Add your review</h5>
+          <%= simple_form_for [@venue, @review] do |f| %>
+            <%= f.input :content, placeholder: 'Add your review here...' %>
+            <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
+            <%= f.submit class:'btn btn-dark btn-lg rounded' %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+
+</div>
