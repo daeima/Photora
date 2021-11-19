@@ -1,8 +1,6 @@
 #page-container {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
-
 }
 
 .headerHome {
@@ -87,4 +85,13 @@ background-image: asset-url('picture_5');
   justify-content: center;
   margin-top: 70px;
   font-family: $headers-font;
+}
+
+.containerTopCards {
+  display: flex;
+  align-content: space-between;
+}
+
+.topThreeBig {
+  font-weight: bold;
 }

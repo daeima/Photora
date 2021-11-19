@@ -52,7 +52,27 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-    <h2 class="subheaderHome">Get inspired by some of our beautiful locations</h2>
+    <h2 class="subheaderHome">Get inspired by our TOP 3 Locations</h2>
+    <div class="cards-container" style="width: 80vw; margin: 40px auto;">
+    <% @display_top.each do |venue| %>
+    <div class="card-venue" >
+      <%= link_to venue_path(venue), class:"text-decoration-none" do %>
+      <%= image_tag venue.photos.first, class:"card-img-top card-venue-img pictureIndex"%>
+      <div class="card-body">
+        <h5 class="card-title title"><%= venue.name %></h5>
+        <h5 class="cardLocation"><%= venue.location %></h5>
+        <% if venue.average_rating.zero? %>
+          <small><em class="text-muted">no reviews yet</em></small>
+        <% else %>
+        <% venue.average_rating.times do %>
+        <i class="fas fa-star star-yellow starColor"></i>
+        <% end %>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
   </div>
 </header>
   <div class="container">

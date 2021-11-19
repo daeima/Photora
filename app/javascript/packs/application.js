@@ -29,14 +29,17 @@ import { initMapbox2 } from '../plugins/init_mapbox2';
 
 // External imports
 import "bootstrap";
+import stickybits from "stickybits";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+const map = document.getElementById(map)
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initFlatpickr();
   initMapbox();
   initMapbox2();
+
   // initSelect2();
 });

@@ -3,7 +3,6 @@ class VenuesController < ApplicationController
 
   def index
     @venues = Venue.geocoded
-
     @markers = @venues.map do |venue|
       {
         lat: venue.latitude,
