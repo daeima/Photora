@@ -173,7 +173,6 @@ puts "Finished creating venues"
 
 puts "Creating bookings"
 
-
 20.times do
   moth = rand(1..12)
   day = rand(1..28)
