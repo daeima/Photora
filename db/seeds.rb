@@ -44,7 +44,7 @@ url2 = [
 
 ]
 
-url3 =  [
+url3 = [
   "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637255580/venues/photo-1636923611344-7c72724aa184_gbocl9.jpg",
   "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637254996/venues/photo-1637170548426-d002d5661e86_xgruwa.jpg",
   "https://res.cloudinary.com/dhdgr3c0l/image/upload/v1637254596/venues/photo-1636536621353-2a64208dc574_m5rfhq.jpg",
@@ -173,10 +173,15 @@ puts "Finished creating venues"
 
 puts "Creating bookings"
 
+
 20.times do
+  moth = rand(1..12)
+  day = rand(1..28)
+  hour_start = rand(0..12)
+  hour_end = rand(hour_start..23)
   Booking.create!(
-    start_time: "2020-06-14 18:00:00",
-    end_time: "2020-06-14 18:00:00",
+    start_time: "2021-#{moth}-#{day} #{hour_start}:00:00",
+    end_time: "2021-#{moth}-#{day} #{hour_end}:00:00",
     total_price: rand(50..200),
     user: [u1, u2].sample,
     venue: Venue.all.sample
