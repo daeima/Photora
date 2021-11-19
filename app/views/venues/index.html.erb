@@ -1,4 +1,5 @@
-<div class="grid-map">
+<h1 class="headerIndex">Have a look at our unique locations</h1>
+<div class="grid-mapIndex">
  <div class="cards-container ">
     <% @venues.each do |venue| %>
     <div class="card-venue" >
@@ -13,9 +14,9 @@
     </div>
     <% end %>
   </div>
-  <div id="map"
-      style="height: 100vh; width: 650px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div id="map" class="position-sticky top-0"
+        style="height: 100vh; width: 650px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
