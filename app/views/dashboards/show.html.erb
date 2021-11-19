@@ -1,7 +1,9 @@
 
 <h1 class="h1-dashboard text-center mb-3">Welcome <%= @user.first_name %></h1>
-<% if @user.venues.empty? %>
-  <div class="text-center"><%= link_to "Become owner", new_venue_path, class: "btn btn-secondary mt-5 visible"%></div>
+<% if @user.owner %>
+  <div class="text-center"><%= link_to "Make a new venue", new_venue_path, class: "btn btn-secondary mt-5 visible"%></div>
+  <% else %>
+    <div class="text-center"><%= link_to "Become an owner", owner_user_path(@user), method: :patch, class: "btn btn-secondary mt-5" %></div>
 <% end %>
 <section style="background-color: #eee;">
   <div class="container py-5">
