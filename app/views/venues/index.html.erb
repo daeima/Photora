@@ -1,5 +1,7 @@
-<div class="grid-map">
- <div class="cards-container">
+
+<h1 class="headerIndex">Have a look at our unique locations</h1>
+<div class="grid-mapIndex">
+ <div class="cards-container ">
     <% @venues.each do |venue| %>
     <div class="card-venue" >
       <%= link_to venue_path(venue), class:"text-decoration-none" do %>
@@ -7,15 +9,23 @@
       <div class="card-body">
         <h5 class="card-title title"><%= venue.name %></h5>
         <h5 class="cardLocation"><%= venue.location %></h5>
-        <p class="card-text"><%= venue.description %></p>
+        <% if venue.average_rating.zero? %>
+          <small><em class="text-muted">no reviews yet</em></small>
+        <% else %>
+        <% venue.average_rating.times do %>
+        <i class="fas fa-star star-yellow starColor"></i>
+        <% end %>
+        <% end %>
       </div>
       <% end %>
     </div>
     <% end %>
   </div>
-  <div id="map"
-      style="height: 100vh; width: 650px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div>
+    <div id="map"
+        style="height: 100vh; width: 27vw;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
   </div>
 </div>

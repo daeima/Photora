@@ -1,9 +1,27 @@
 #map {
-  position: sticky !important;
-  top: 0 !important;
+  position: sticky;
+  top: 0;
+  margin: 10px;
+  align-self: flex-start;
 }
 
-.grid-map {
+.grid-mapIndex {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  padding: 20px;
+}
+
+.headerIndex {
+  text-align: center;
+  margin: 30px;
+}
+
+.mapHeight {
+  height: 100vh;
+}
+
+.starColor {
+  color: black;
 }
