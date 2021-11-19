@@ -1,15 +1,16 @@
 #map {
   position: sticky;
-  bottom: 0px;
+  top: 0;
   margin: 10px;
   align-self: flex-start;
 }
 
 .grid-mapIndex {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-left: 15px;
   margin-bottom: 15px;
+  padding: 20px;
 }
 
 .headerIndex {
@@ -19,4 +20,8 @@
 
 .mapHeight {
   height: 100vh;
+}
+
+.starColor {
+  color: black;
 }

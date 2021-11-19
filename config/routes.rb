@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :venues do
     resources :bookings, only: %i[new create]
     resources :reviews, only: %i[create]
+    collection do
+      get :top
+    end
   end
   get "/booking/:id", to: "bookings#confirmation", as: "confirmation"
   get "/dashboard", to: "dashboards#show", as: "dashboard"
