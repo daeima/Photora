@@ -11,5 +11,10 @@ Rails.application.routes.draw do
   end
   get "/booking/:id", to: "bookings#confirmation", as: "confirmation"
   get "/dashboard", to: "dashboards#show", as: "dashboard"
+  resources :users, only: [] do
+    member do
+      patch :owner
+    end
+  end
 
 end
