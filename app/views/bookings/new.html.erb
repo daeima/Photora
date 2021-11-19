@@ -11,7 +11,7 @@
       <%= simple_form_for [@venue, @booking] do |f| %>
         <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.submit "Request Booking", class: "btn btn-primary" %>
+        <%= f.submit "Request Booking", class: "btn btn-dark btn-lg" %>
       <% end %>
     </div>
   </div>
